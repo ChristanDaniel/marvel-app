@@ -1,28 +1,50 @@
-// import { useEffect } from 'react'
-import { MainContainer } from './styles'
-import axios from 'axios'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { useRouter } from 'next/dist/client/router'
 
-const publicKey = '55d38ed11eb30d8266c188e95347d927';
-const privateKey = '83d797f0b34d132b9cfc8309213f57672ca1e609';
+import { CharacterContainerContext } from '../CharacterContext'
 
-const time = Number(new Date())
+import { MainContainer, CharacterContent, CharacterList, CircularContent } from './styles'
 
-const hash = (time + privateKey = publicKey);
+import Slider from '../../components/Slider/SliderBanner'
+import { CircularProgress } from '@mui/material'
+import { FooterContainer } from '../../components/FooterContainer'
 
 const HomeContainer = (): JSX.Element => {
-  const [character, setCharacter] = useState([])
-
-  const getCharacterList = () => {
-    axios.get(`http://gateway.marvel.com/v1/public/characters?ts=${time}&apikey${publicKey}&hash=${hash}`)
-  }
-  // useEffect(() => {
-  //  http://gateway.marvel.com/v1/public/characters?ts=${time}&apikey${publicKey}&hash=${hash}
-  // }, [])
+  const router = useRouter()
+  const { character, getCharacterListLimited } = useContext(CharacterContainerContext)
 
   return (
     <MainContainer>
-      <h1>Hello World</h1>
+      <div>
+        <Slider />
+      </div>
+      <CharacterContent>
+        {character.length ? (
+          <ul>
+            {character.map((char) => {
+              return (
+                <>
+                  <a onClick={() => router.push(`/character/${char.id}`)}>
+                    <CharacterList>
+                      <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt="teste" />
+                      <div>
+                        <h3>{char.name}</h3>
+                        {char.description === '' ? <p>character does not have a description yet</p> : <p>{char.description}</p>}
+                      </div>
+                    </CharacterList>
+                  </a>
+                </>
+              )
+            })}
+          </ul>
+        ) : (
+          <CircularContent>
+            <CircularProgress />
+          </CircularContent>
+        )}
+      </CharacterContent>
+      <button onClick={() => getCharacterListLimited()}>More</button>
+      <FooterContainer />
     </MainContainer>
   )
 }
