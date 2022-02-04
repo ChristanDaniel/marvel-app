@@ -21,8 +21,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - `src/` 
 - `src/components` -> Pasta de todos componentes do app.
 - `src/Features` -> Pasta de todas Features do app.
-- `src/Features/PageItem` -> Pasta de todas Features da Página do item selecionado.
-- `src/Features/PageList` -> Pasta de todas Features da Página de listagem.
+- `src/Features/PageItem` -> Pasta de Features da Página do item selecionado.
+- `src/Features/PageList` -> Pasta de Features da Página de listagem.
 
 ---
 - `services/` -> Pasta de todas as chamadas na API da [Marvel](https://developer.marvel.com/).
@@ -43,7 +43,7 @@ https://user-images.githubusercontent.com/80167149/152596711-71845718-c32a-42e6-
 Faça um clone desse repositório e acesse o diretório.
 
 ```bash
-$ git clone https://github.com/ChristanDaniel/store-app.git
+$ git clone https://github.com/ChristanDaniel/marvel-app.git
 ```
 ```bash
 # Instalando as dependências
