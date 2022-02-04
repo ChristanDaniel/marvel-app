@@ -1,10 +1,8 @@
-import { useContext, useState } from 'react'
-import { CharacterContainerContext } from '../../features/CharacterContext'
+import { useState } from 'react'
 
 import auth from '../../services/auth'
 import { api } from '../../services/api'
 import { NavSection, CssTextInput } from './styles'
-import { TextField } from '@mui/material'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -21,22 +19,21 @@ interface ChracterProps {
 }
 
 interface SeachProps {
-  setModific: React.Dispatch<React.SetStateAction<ChracterProps[]>>
-  apiGet: string
+  setStateModificationList: React.Dispatch<React.SetStateAction<ChracterProps[]>>
+  apiGetString: string
 }
 
-const Seach = ({ apiGet, setModific }: SeachProps): JSX.Element => {
+const SearchComponent = ({ apiGetString, setStateModificationList }: SeachProps): JSX.Element => {
   const [inputSearch, setInputSearch] = useState('')
 
   const handleGetCharacterSearch = async () => {
     if (inputSearch.length == 0) {
       return
     } else {
-      const response = await api.get(`/${apiGet}=${inputSearch}`, { params: { ts: auth.ts, apikey: auth.apikey, hash: auth.hash } })
+      const response = await api.get(`/${apiGetString}=${inputSearch}`, { params: { ts: auth.ts, apikey: auth.apikey, hash: auth.hash } })
 
       if (response.data.data.count === 0) {
         toast.error('search not found. 🙁', {
-          position: 'bottom-right',
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -45,7 +42,7 @@ const Seach = ({ apiGet, setModific }: SeachProps): JSX.Element => {
           progress: undefined
         })
       } else {
-        setModific(response.data.data.results)
+        setStateModificationList(response.data.data.results)
       }
     }
   }
@@ -60,6 +57,17 @@ const Seach = ({ apiGet, setModific }: SeachProps): JSX.Element => {
 
   return (
     <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <NavSection>
         <CssTextInput
           id="custom-css-outlined-input"
@@ -69,19 +77,8 @@ const Seach = ({ apiGet, setModific }: SeachProps): JSX.Element => {
           value={inputSearch}
           onKeyPress={(event) => handleSearchClickEnter(event)}
         />
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
       </NavSection>
     </>
   )
 }
-export default Seach
+export default SearchComponent

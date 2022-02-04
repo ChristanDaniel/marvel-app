@@ -7,7 +7,7 @@ export function FooterContainer(): JSX.Element {
     <>
       <Footer>
         <div>
-          <div id="teste">
+          <div id="divContent">
             <a href="https://github.com/ChristanDaniel" target="_blank" rel="noreferrer noopener">
               <FaGithub /> Github
             </a>

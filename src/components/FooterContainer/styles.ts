@@ -4,6 +4,8 @@ const Footer = styled.footer`
   width: 100%;
   height: 140px;
 
+  padding-left: 12px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +21,7 @@ const Footer = styled.footer`
     align-items: center;
     color: #ffff;
     margin-bottom: 4px;
+    cursor: pointer;
   }
 
   span {
@@ -26,7 +29,7 @@ const Footer = styled.footer`
     margin: 2px;
   }
 
-  #teste {
+  #divContent {
     display: flex;
     justify-content: center;
 
