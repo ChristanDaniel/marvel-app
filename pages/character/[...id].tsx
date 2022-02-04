@@ -2,19 +2,19 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 
-const HomeContainer = dynamic(() => import('../src/features/PageList/HomeContainer'), {
+const CharacterContainer = dynamic(() => import('../../src/features/PageItem/PageCharacterContainer'), {
   ssr: false
 })
 
-const Home: NextPage = () => {
+const CharacterPage: NextPage = () => {
   return (
     <>
       <Head>
         <title>Marvel | Character</title>
       </Head>
-      <HomeContainer />
+      <CharacterContainer />
     </>
   )
 }
 
-export default Home
+export default CharacterPage
