@@ -13,6 +13,31 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Styled-Components](https://styled-components.com/) <img align='left' alt="styled-components" width='35px' src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" />
 
+
+## 📂 Estrutura
+
+- `pages/` -> Pasta de rotas do app.
+- `public/` -> Pasta de Imagens.
+- `src/` 
+- `src/components` -> Pasta de todos componentes do app.
+- `src/Features` -> Pasta de todas Features do app.
+- `src/Features/PageItem` -> Pasta de todas Features da Página do item selecionado.
+- `src/Features/PageList` -> Pasta de todas Features da Página de listagem.
+
+---
+- `services/` -> Pasta de todas as chamadas na API da [Marvel](https://developer.marvel.com/).
+- `services/api.ts` -> Arquivo que cria baseURL para [Marvel](https://developer.marvel.com/).
+- `services/apiConstants.ts` -> Arquivo de todas constantes utilizada para fazer requisição API.
+- `services/auth.ts` -> Arquivo que armazena constantes de autorização de requisição na api.
+- `services/PageItem/` -> Pasta de todas as chamadas na API da Página do item selecionado.
+- `services/PageList/` -> Pasta de todas as chamadas na API da Página de listagem.
+
+
+https://user-images.githubusercontent.com/80167149/152596594-12ef9243-ad4f-4baf-8422-fc60c4d4f2e4.mp4
+
+https://user-images.githubusercontent.com/80167149/152596711-71845718-c32a-42e6-b427-3e694f13c21b.mp4
+
+
 ## 📥 Instalação e execução
 
 Faça um clone desse repositório e acesse o diretório.
@@ -33,3 +58,6 @@ Tudo Pronto? Agora é só acessar [`localhost:3000`](http://localhost:3000) do s
 
 ---
 Feito com 🧡 by Christian Daniel 👋🏻
+
+
+
