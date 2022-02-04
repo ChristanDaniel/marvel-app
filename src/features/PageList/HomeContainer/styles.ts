@@ -5,26 +5,6 @@ const MainContainer = styled.main`
   height: 100vh;
   display: flex;
   flex-direction: column;
-
-  button {
-    width: 340px;
-    margin: auto;
-    margin-bottom: 40px;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: 500;
-    background: rgba(178, 34, 34);
-    color: #fff;
-
-    cursor: pointer;
-    border: 0;
-
-    transition: 0.3s;
-
-    :hover {
-      filter: brightness(0.7);
-    }
-  }
 `
 
 const CharacterContent = styled.div`
@@ -34,6 +14,12 @@ const CharacterContent = styled.div`
     grid-template-columns: repeat(3, 1fr);
     margin: 45px;
     gap: 30px;
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `
 
