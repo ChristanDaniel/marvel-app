@@ -2,6 +2,11 @@
   <img width='140px'src="https://user-images.githubusercontent.com/80167149/152594361-5dece93e-2f26-48de-b089-f2f8aa987ca7.png" align="center"/>
 </h1>
 
+## 💻 Projeto
+Marvel-app é um projeto para listagem e visualização de item como (Hero, Comics, Events e Series), e todos os dados utilizado nesse app foram possíveis com o uso da [Marvel Comics API](https://developer.marvel.com/)
+
+
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -12,6 +17,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [TypeScript](https://www.typescriptlang.org/) <img align='left' alt='TypeScript' width='35px' src="https://img.icons8.com/color/48/000000/typescript.png"/>
 
 - [Styled-Components](https://styled-components.com/) <img align='left' alt="styled-components" width='35px' src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" />
+
 
 
 ## 📂 Estrutura
@@ -25,10 +31,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - `src/Features/PageList` -> Pasta de Features da Página de listagem.
 
 ---
-- `services/` -> Pasta de todas as chamadas na API da [Marvel](https://developer.marvel.com/).
-- `services/api.ts` -> Arquivo que cria baseURL para [Marvel](https://developer.marvel.com/).
+- `src/services/` -> Pasta de todas as chamadas na API da [Marvel](https://developer.marvel.com/).
+- `services/api.ts` -> Arquivo que cria baseURL para API da [Marvel](https://developer.marvel.com/).
 - `services/apiConstants.ts` -> Arquivo de todas constantes utilizada para fazer requisição API.
-- `services/auth.ts` -> Arquivo que armazena constantes de autorização de requisição na api.
+- `services/auth.ts` -> Arquivo que armazena constantes de autorização de requisição na API.
 - `services/PageItem/` -> Pasta de todas as chamadas na API da Página do item selecionado.
 - `services/PageList/` -> Pasta de todas as chamadas na API da Página de listagem.
 
