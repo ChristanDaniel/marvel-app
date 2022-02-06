@@ -9,7 +9,7 @@ SwiperCore.use([Pagination, Navigation])
 
 import { CircularProgress } from '@mui/material'
 
-import { MainContainer, CharacterContainer, CharacterDescriptionContent, CharacterComicsContent, CircularContent } from './styles'
+import { MainContainer, ItemContainer, ItemDescriptionContent, ItemSwiperContent, CircularContent } from './styles'
 import { FooterContainer } from '../../../components/FooterContainer'
 import { getSerieItem, getSerieItemCharacter, getSerieItemCreators, getSeriesItemComics } from '../../../services/PageItem/PageSeries/SeriesService'
 
@@ -67,8 +67,8 @@ const PageEventsContainer = (): JSX.Element => {
           <img src="/marvelLogo.png" alt="Logo" />
         </a>
       </header>
-      <CharacterContainer>
-        <CharacterDescriptionContent>
+      <ItemContainer>
+        <ItemDescriptionContent>
           {SeriesList.length ? (
             <>
               {SeriesList.map((serie) => {
@@ -85,9 +85,9 @@ const PageEventsContainer = (): JSX.Element => {
           ) : (
             <CircularProgress />
           )}
-        </CharacterDescriptionContent>
+        </ItemDescriptionContent>
 
-        <CharacterComicsContent>
+        <ItemSwiperContent>
           <h1>Characters</h1>
           <div>
             <Swiper
@@ -120,8 +120,8 @@ const PageEventsContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
-        <CharacterComicsContent>
+        </ItemSwiperContent>
+        <ItemSwiperContent>
           <h1>Creator</h1>
           <div>
             <Swiper
@@ -154,9 +154,9 @@ const PageEventsContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
+        </ItemSwiperContent>
 
-        <CharacterComicsContent>
+        <ItemSwiperContent>
           <h1>Comic</h1>
           <div>
             <Swiper
@@ -189,8 +189,8 @@ const PageEventsContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
-      </CharacterContainer>
+        </ItemSwiperContent>
+      </ItemContainer>
       <FooterContainer />
     </MainContainer>
   )

@@ -9,7 +9,7 @@ SwiperCore.use([Pagination, Navigation])
 
 import { CircularProgress } from '@mui/material'
 
-import { MainContainer, CharacterContainer, CharacterDescriptionContent, CharacterComicsContent, CircularContent } from './styles'
+import { MainContainer, ItemContainer, ItemDescriptionContent, ItemSwiperContent, CircularContent } from './styles'
 import { FooterContainer } from '../../../components/FooterContainer'
 import { getComicItem, getComicItemCharacter, getComicItemCreators } from '../../../services/PageItem/PageComic/ComicServices'
 
@@ -67,8 +67,8 @@ const PageComicContainer = (): JSX.Element => {
           <img src="/marvelLogo.png" alt="Logo" />
         </a>
       </header>
-      <CharacterContainer>
-        <CharacterDescriptionContent>
+      <ItemContainer>
+        <ItemDescriptionContent>
           {comicsList.length ? (
             <>
               {comicsList.map((comic) => {
@@ -85,9 +85,9 @@ const PageComicContainer = (): JSX.Element => {
           ) : (
             <CircularProgress />
           )}
-        </CharacterDescriptionContent>
+        </ItemDescriptionContent>
 
-        <CharacterComicsContent>
+        <ItemSwiperContent>
           <h1>Characters</h1>
           <div>
             <Swiper
@@ -120,8 +120,8 @@ const PageComicContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
-        <CharacterComicsContent>
+        </ItemSwiperContent>
+        <ItemSwiperContent>
           <h1>Creator</h1>
           <div>
             <Swiper
@@ -154,8 +154,8 @@ const PageComicContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
-      </CharacterContainer>
+        </ItemSwiperContent>
+      </ItemContainer>
       <FooterContainer />
     </MainContainer>
   )

@@ -14,7 +14,7 @@ const MainContainer = styled.main`
   }
 `
 
-const CharacterContainer = styled.div`
+const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: #232323;
@@ -22,7 +22,7 @@ const CharacterContainer = styled.div`
   position: relative;
 `
 
-const CharacterDescriptionContent = styled.div`
+const ItemDescriptionContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +54,7 @@ const CharacterDescriptionContent = styled.div`
   }
 `
 
-const CharacterComicsContent = styled.div`
+const ItemSwiperContent = styled.div`
   min-width: 100%;
   min-height: 400px;
   background: #232323;
@@ -110,4 +110,4 @@ const CircularContent = styled.div`
   justify-content: center;
 `
 
-export { MainContainer, CharacterContainer, CharacterDescriptionContent, CharacterComicsContent, CircularContent }
+export { MainContainer, ItemContainer, ItemDescriptionContent, ItemSwiperContent, CircularContent }

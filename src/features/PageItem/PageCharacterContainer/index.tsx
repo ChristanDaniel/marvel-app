@@ -16,7 +16,7 @@ SwiperCore.use([Pagination, Navigation])
 
 import { CircularProgress } from '@mui/material'
 
-import { MainContainer, CharacterContainer, CharacterDescriptionContent, CharacterComicsContent, CircularContent } from './styles'
+import { MainContainer, ItemContainer, ItemDescriptionContent, ItemSwiperContent, CircularContent } from './styles'
 import { FooterContainer } from '../../../components/FooterContainer'
 
 type ChracterProps = {
@@ -71,8 +71,8 @@ const HomeContainer = (): JSX.Element => {
           <img src="/marvelLogo.png" alt="Logo" />
         </a>
       </header>
-      <CharacterContainer>
-        <CharacterDescriptionContent>
+      <ItemContainer>
+        <ItemDescriptionContent>
           {character.length ? (
             <>
               {character.map((char) => {
@@ -89,9 +89,9 @@ const HomeContainer = (): JSX.Element => {
           ) : (
             <CircularProgress />
           )}
-        </CharacterDescriptionContent>
+        </ItemDescriptionContent>
 
-        <CharacterComicsContent>
+        <ItemSwiperContent>
           <h1>Comics</h1>
           <div>
             <Swiper
@@ -124,8 +124,8 @@ const HomeContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
-        <CharacterComicsContent>
+        </ItemSwiperContent>
+        <ItemSwiperContent>
           <h1>Series</h1>
           <div>
             <Swiper
@@ -158,9 +158,9 @@ const HomeContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
+        </ItemSwiperContent>
 
-        <CharacterComicsContent>
+        <ItemSwiperContent>
           <h1>Events</h1>
           <div>
             <Swiper
@@ -193,8 +193,8 @@ const HomeContainer = (): JSX.Element => {
               )}
             </Swiper>
           </div>
-        </CharacterComicsContent>
-      </CharacterContainer>
+        </ItemSwiperContent>
+      </ItemContainer>
       <FooterContainer />
     </MainContainer>
   )
