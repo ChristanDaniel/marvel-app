@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/dist/client/router'
 
-import { MainContainer, CharacterContent, CharacterList, CircularContent } from './styles'
+import { MainContainer, ItemContent, ItemList, CircularContent } from './styles'
 
 import { CircularProgress } from '@mui/material'
 import { FooterContainer } from '../../../components/FooterContainer'
@@ -46,13 +46,13 @@ const HomeContainer = (): JSX.Element => {
       <div>
         <Slider />
       </div>
-      <CharacterContent>
+      <ItemContent>
         {character.length ? (
           <ul>
             {character.map((char) => {
               return (
                 <a onClick={() => router.push(`/character/${char.id}`)} key={char.id}>
-                  <CharacterList>
+                  <ItemList>
                     <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt="teste" />
                     <div>
                       <h3>
@@ -60,7 +60,7 @@ const HomeContainer = (): JSX.Element => {
                       </h3>
                       {char.description === '' ? <p>does not have a description yet</p> : <p>{char.description}</p>}
                     </div>
-                  </CharacterList>
+                  </ItemList>
                 </a>
               )
             })}
@@ -70,7 +70,7 @@ const HomeContainer = (): JSX.Element => {
             <CircularProgress />
           </CircularContent>
         )}
-      </CharacterContent>
+      </ItemContent>
       <Button onClick={() => getCharacterListLimited()}>More</Button>
       <FooterContainer />
     </MainContainer>

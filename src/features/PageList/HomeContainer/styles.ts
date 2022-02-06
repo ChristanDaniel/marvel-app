@@ -7,7 +7,7 @@ const MainContainer = styled.main`
   flex-direction: column;
 `
 
-const CharacterContent = styled.div`
+const ItemContent = styled.div`
   ul {
     width: auto;
     display: grid;
@@ -32,7 +32,7 @@ const CircularContent = styled.div`
   justify-content: center;
 `
 
-const CharacterList = styled.li`
+const ItemList = styled.li`
   display: flex;
   align-items: center;
   padding: 8px;
@@ -94,4 +94,4 @@ const CharacterList = styled.li`
   }
 `
 
-export { MainContainer, CharacterContent, CircularContent, CharacterList }
+export { MainContainer, ItemContent, CircularContent, ItemList }

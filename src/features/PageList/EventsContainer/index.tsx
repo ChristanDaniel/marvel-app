@@ -4,7 +4,7 @@ import { useRouter } from 'next/dist/client/router'
 import { CircularProgress } from '@mui/material'
 import { FooterContainer } from '../../../components/FooterContainer'
 
-import { MainContainer, CharacterContent, CharacterList, CircularContent } from './styles'
+import { MainContainer, ItemContent, ItemList, CircularContent } from './styles'
 
 import Header from '../../../components/Header'
 import Slider from '../../../components/Slider/SliderBanner'
@@ -45,20 +45,20 @@ const EventsContainer = (): JSX.Element => {
       <div>
         <Slider />
       </div>
-      <CharacterContent>
+      <ItemContent>
         {characterEvents.length ? (
           <ul>
             {characterEvents.map((char) => {
               return (
                 <div key={char.id + 5}>
                   <a onClick={() => router.push(`/Event/${char.id}`)}>
-                    <CharacterList>
+                    <ItemList>
                       <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt="teste" />
                       <div>
                         <h3>{char.title}</h3>
                         {char.description === '' ? <p>Events does not have a description yet</p> : <p>{char.description}</p>}
                       </div>
-                    </CharacterList>
+                    </ItemList>
                   </a>
                 </div>
               )
@@ -69,7 +69,7 @@ const EventsContainer = (): JSX.Element => {
             <CircularProgress />
           </CircularContent>
         )}
-      </CharacterContent>
+      </ItemContent>
       <Button onClick={() => getCharacterListEventsLimited()}>More</Button>
       <FooterContainer />
     </MainContainer>
