@@ -56,7 +56,7 @@ const ComicContainer = (): JSX.Element => {
                       <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt="teste" />
                       <div>
                         <h3>{char.title}</h3>
-                        {char.description === '' ? <p>Comic does not have a description yet</p> : <p>{char.description}</p>}
+                        {char.description === '' ? <p>Comic doesn’t have a description yet</p> : <p>{char.description}</p>}
                       </div>
                     </ItemList>
                   </a>

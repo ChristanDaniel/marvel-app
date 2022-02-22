@@ -57,7 +57,7 @@ const SeriesContainer = (): JSX.Element => {
                     <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt="teste" />
                     <div>
                       <h3>{char.title}</h3>
-                      {char.description === '' || null ? <p>Series does not have a description yet</p> : <p>{char.description}</p>}
+                      {char.description === '' || null ? <p>Series doesn’t have a description yet</p> : <p>{char.description}</p>}
                     </div>
                   </ItemList>
                 </a>

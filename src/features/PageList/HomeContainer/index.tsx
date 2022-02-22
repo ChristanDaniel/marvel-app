@@ -36,6 +36,7 @@ const HomeContainer = (): JSX.Element => {
   const getCharacterListLimited = () => {
     setGetLimit((prevState) => prevState + 18)
   }
+
   useEffect(() => {
     getCharacterList()
   }, [getLimit])
@@ -58,7 +59,7 @@ const HomeContainer = (): JSX.Element => {
                       <h3>
                         {char.name} {char.title}
                       </h3>
-                      {char.description === '' ? <p>does not have a description yet</p> : <p>{char.description}</p>}
+                      {char.description === '' ? <p>Hero doesn’t have a description yet</p> : <p>{char.description}</p>}
                     </div>
                   </ItemList>
                 </a>

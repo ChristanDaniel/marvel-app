@@ -1,7 +1,8 @@
 import { api } from '../api'
 import auth from '../auth'
-import { BASE_URL_CHARACTERS, BASE_URL_COMIC_YEAR, BASE_URL_EVENTS, BASE_URL_SERIES } from '../apiConstants'
 import { getApiResponseProps } from './PageListModel'
+
+import { BASE_URL_CHARACTERS, BASE_URL_COMIC_YEAR, BASE_URL_EVENTS, BASE_URL_SERIES } from '../apiConstants'
 
 export const getCharactersList = async (limit: number): Promise<getApiResponseProps> => {
   try {
