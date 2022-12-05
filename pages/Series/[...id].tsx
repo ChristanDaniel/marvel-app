@@ -10,7 +10,7 @@ const SeriesPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Marvel | Serie</title>
+        <title>Marvel | Series</title>
       </Head>
       <PageSeriesContainer />
     </>
